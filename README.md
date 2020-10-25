@@ -1,0 +1,1 @@
+# Insight-ops-stock-management-app
