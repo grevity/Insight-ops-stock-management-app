@@ -88,7 +88,9 @@ class _LoginState extends State<Login> {
                             response.data["user"]["role"]["id"] == 1) {
                           GetIt.I<SharedPreferences>()
                               .setBool("isLoggedIn", true);
-                          ExtendedNavigator.of(context).push(Routes.homeIndex);
+
+                          //So that we won't get back to login aka splash screen...
+                          ExtendedNavigator.of(context).pushAndRemoveUntil(Routes.homeIndex, (route) => false);
                         } else {
                           showDialog(
                               context: context,

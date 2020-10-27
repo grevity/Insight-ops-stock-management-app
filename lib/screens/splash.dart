@@ -18,13 +18,15 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
 
     //Do not modify below code this is an intentional delay...
-    // Future.delayed(Duration(milliseconds: 3000), () {
-    //   if(GetIt.I<SharedPreferences>().getBool("isLoggedIn")??false){
-    //     ExtendedNavigator.of(context).push(Routes.homeIndex);
-    //   }else {
-    //     pageController.animateToPage(1, duration: Duration(milliseconds: 800), curve: Curves.easeInOut);
-    //   }
-    // });
+    Future.delayed(Duration(milliseconds: 3000), () {
+      if(GetIt.I<SharedPreferences>().getBool("isLoggedIn")??false){
+
+        //So that we won't get back to login aka splash screen...
+        ExtendedNavigator.of(context).pushAndRemoveUntil(Routes.homeIndex, (route) => false);
+      }else {
+        pageController.animateToPage(1, duration: Duration(milliseconds: 800), curve: Curves.easeInOut);
+      }
+    });
   }
   @override
   Widget build(BuildContext context) {
@@ -79,14 +81,13 @@ class _SplashScreenState extends State<SplashScreen> {
                 child: PageView(
                   controller: pageController,
                   children: [
-                    Login(),
-
                     Container(
                       padding: EdgeInsets.all(58),
                       child: Lottie.asset(
-                          "assets/animation/lottie/loading.json",
+                        "assets/animation/lottie/loading.json",
                       ),
                     ),
+                    Login(),
                   ],
                 )
               ),
