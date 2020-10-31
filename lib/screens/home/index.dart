@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:stock_management/screens/home/widgets/productList.dart';
 import 'package:stock_management/screens/home/widgets/vendorList.dart';
 import 'package:stock_management/screens/settings/index.dart';
 import 'package:stock_management/utils/i18n.dart';
@@ -71,7 +72,7 @@ class _HomeIndexState extends State<HomeIndex>
         physics: BouncingScrollPhysics(),
         children: [
           VendorList(),
-          Icon(Icons.directions_transit),
+          ProductList()
         ],
       ),
     );

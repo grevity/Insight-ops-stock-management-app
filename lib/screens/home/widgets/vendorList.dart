@@ -15,8 +15,10 @@ class _VendorListState extends State<VendorList> {
   List<Vendors> _vendorList;
   ApiHandlers _apiHandlers = GetIt.I<ApiHandlers>();
 
-  onChange(String value) {
-
+  @override
+  void initState() {
+    super.initState();
+    _vendorList = context.read(store).vendors;
   }
 
   @override
@@ -89,7 +91,7 @@ class VendorCard extends StatelessWidget {
     return Container(
       width: MediaQuery.of(context).size.width,
       margin: EdgeInsets.only(left: 4, right: 4, top: 4, bottom: 4),
-      padding: EdgeInsets.only(top: 8, left: 6, bottom: 8),
+      padding: EdgeInsets.only(top: 12, left: 6, bottom: 12),
       color: Colors.grey[300],
       child: Row(
         children: [
@@ -129,20 +131,28 @@ class VendorCard extends StatelessWidget {
                       color: Colors.black87,
                       fontSize: 19,
                       // fontWeight: FontWeight.bold,
-                      fontFamily: 'NanumGothic-Regular'),
+                      fontFamily: 'NanumGothic-Bold'),
                 ),
                 SizedBox(
-                  height: 4,
+                  height: 12,
                 ),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
-                      "Phone",
-                      style: TextStyle(
+                    Container(
+                      child: Text(
+                        "Phone",
+                        style: TextStyle(
                           color: Colors.black87,
                           fontSize: 13,
-                          fontWeight: FontWeight.bold,
-                          fontFamily: 'NanumGothic-Regular'),
+                          fontFamily: 'NanumGothic-Regular',
+                        ),
+                      ),
+                      padding: EdgeInsets.only(left: 8,right: 8,top:3,bottom: 3),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(50)),
+                        color: Colors.black12
+                      ),
                     ),
                     SizedBox(
                       width: 4,
@@ -151,7 +161,7 @@ class VendorCard extends StatelessWidget {
                       phone,
                       style: TextStyle(
                           color: Colors.black87,
-                          fontSize: 13,
+                          fontSize: 16,
                           // fontWeight: FontWeight.bold,
                           fontFamily: 'NanumGothic-Regular'),
                     ),
@@ -161,14 +171,22 @@ class VendorCard extends StatelessWidget {
                   height: 4,
                 ),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
-                      "GSTIN",
-                      style: TextStyle(
+                    Container(
+                      child: Text(
+                        "GSTIN",
+                        style: TextStyle(
                           color: Colors.black87,
                           fontSize: 13,
-                          fontWeight: FontWeight.bold,
-                          fontFamily: 'NanumGothic-Regular'),
+                          fontFamily: 'NanumGothic-Regular',
+                        ),
+                      ),
+                      padding: EdgeInsets.only(left: 8,right: 8,top:3,bottom: 3),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(50)),
+                          color: Colors.black12
+                      ),
                     ),
                     SizedBox(
                       width: 4,
@@ -177,7 +195,7 @@ class VendorCard extends StatelessWidget {
                       gstin,
                       style: TextStyle(
                           color: Colors.black87,
-                          fontSize: 13,
+                          fontSize: 16,
                           // fontWeight: FontWeight.bold,
                           fontFamily: 'NanumGothic-Regular'),
                     ),
@@ -186,10 +204,7 @@ class VendorCard extends StatelessWidget {
               ],
             ),
           ),
-          Icon(Icons.chevron_right),
-          SizedBox(
-            width: 12,
-          )
+          Padding(padding: EdgeInsets.all(14),child: Icon(Icons.chevron_right,color: Color(0xFF169e83),),)
         ],
       ),
     );
