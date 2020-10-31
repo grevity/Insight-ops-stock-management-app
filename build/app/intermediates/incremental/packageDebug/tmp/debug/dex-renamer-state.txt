@@ -1,4 +1,4 @@
-#Wed Oct 28 19:59:15 IST 2020
+#Sat Oct 31 13:17:28 IST 2020
 base.0=/Users/gurkaransingh/Documents/Git/General/Insight-ops-stock-management-app/build/app/intermediates/dex/debug/mergeDexDebug/out/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

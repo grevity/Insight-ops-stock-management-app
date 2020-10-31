@@ -86,8 +86,11 @@ class _LoginState extends State<Login> {
                       if (response.data["status"]) {
                         if (response.data["user"]["role"]["id"] == 4 ||
                             response.data["user"]["role"]["id"] == 1) {
+                          print(response.data["user"]);
                           GetIt.I<SharedPreferences>()
                               .setBool("isLoggedIn", true);
+                          GetIt.I<SharedPreferences>()
+                              .setString("restaurantId", response.data["user"]["restaurant"]["id"].toString());
 
                           //So that we won't get back to login aka splash screen...
                           ExtendedNavigator.of(context).pushAndRemoveUntil(Routes.homeIndex, (route) => false);

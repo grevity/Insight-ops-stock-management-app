@@ -1,18 +1,38 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/all.dart';
+import 'package:stock_management/screens/home/widgets/vendorList.dart';
 import 'package:stock_management/screens/settings/index.dart';
 import 'package:stock_management/utils/i18n.dart';
 
-class HomeIndex extends ConsumerWidget {
+class HomeIndex extends StatefulWidget {
   @override
-  Widget build(BuildContext context, ScopedReader watch) {
+  _HomeIndexState createState() => _HomeIndexState();
+}
+
+class _HomeIndexState extends State<HomeIndex>
+    with SingleTickerProviderStateMixin {
+  TabController _tabController;
+
+  @override
+  void initState() {
+    super.initState();
+    _tabController = new TabController(vsync: this, length: 2);
+  }
+
+  @override
+  void dispose() {
+    _tabController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.grey[200],
       appBar: AppBar(
         actions: [
           IconButton(
             icon: Icon(
-              Icons.settings,
+              Icons.language,
               color: Colors.white,
             ),
             onPressed: () {
@@ -29,6 +49,30 @@ class HomeIndex extends ConsumerWidget {
         title: Text(
           I18n.of(context).translate('HomeAppBarTitle'),
         ),
+        bottom: TabBar(
+          indicatorColor: Colors.white,
+          controller: _tabController,
+          tabs: [
+            Tab(
+              child: Text(
+                I18n.of(context).translate('HomeTabBarVendor'),
+              ),
+            ),
+            Tab(
+              child: Text(
+                I18n.of(context).translate('HomeTabBarProducts'),
+              ),
+            ),
+          ],
+        ),
+      ),
+      body: TabBarView(
+        controller: _tabController,
+        physics: BouncingScrollPhysics(),
+        children: [
+          VendorList(),
+          Icon(Icons.directions_transit),
+        ],
       ),
     );
   }
