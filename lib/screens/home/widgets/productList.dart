@@ -6,6 +6,7 @@ import 'package:stock_management/repository/api/handlers.dart';
 import 'package:stock_management/repository/data/models/items.dart';
 import 'package:stock_management/repository/vmodel/store.dart';
 import 'package:stock_management/screens/widgets/shimmerList.dart';
+import 'package:stock_management/utils/i18n.dart';
 
 class ProductList extends StatefulWidget {
   @override
@@ -42,7 +43,7 @@ class _ProductListState extends State<ProductList> {
               width: MediaQuery.of(context).size.width,
               child: TextField(
                 decoration: InputDecoration(
-                  hintText: "Search Items",
+                  hintText: I18n.of(context).translate('SearchItems'),
                   prefixIcon: Icon(
                     Icons.search,
                     color: Color(0xFF1abc9c),
@@ -167,11 +168,20 @@ class ProductCard extends StatelessWidget {
                       // fontWeight: FontWeight.bold,
                       fontFamily: 'NanumGothic-Regular'),
                 ),
+                SizedBox(height: 2,),
+                Text(
+                  "@$uom",
+                  style: TextStyle(
+                      color: Colors.black87,
+                      fontSize: 14,
+                      // fontWeight: FontWeight.bold,
+                      fontFamily: 'NanumGothic-Regular'),
+                ),
               ],
             ),
           ),
           SizedBox(
-            width: 8,
+            width: 14,
           ),
           Expanded(
             child: Column(
@@ -282,40 +292,6 @@ class ProductCard extends StatelessWidget {
                     ),
                     Text(
                       category,
-                      style: TextStyle(
-                          color: Colors.black87,
-                          fontSize: 16,
-                          // fontWeight: FontWeight.bold,
-                          fontFamily: 'NanumGothic-Regular'),
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 4,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      child: Text(
-                        "UOM",
-                        style: TextStyle(
-                          color: Colors.black87,
-                          fontSize: 13,
-                          fontFamily: 'NanumGothic-Regular',
-                        ),
-                      ),
-                      padding: EdgeInsets.only(left: 8,right: 8,top:3,bottom: 3),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.all(Radius.circular(50)),
-                          color: Colors.black12
-                      ),
-                    ),
-                    SizedBox(
-                      width: 4,
-                    ),
-                    Text(
-                      uom,
                       style: TextStyle(
                           color: Colors.black87,
                           fontSize: 16,

@@ -1,5 +1,21 @@
 {
     "HomeAppBarTitle": "Home",
     "HomeTabBarVendor": "Vendors",
-    "HomeTabBarProducts" :"Products"
+    "HomeTabBarProducts" :"Products",
+    "SearchVendors": "Search Vendors",
+    "SearchItems": "Search Items",
+    "CreateReceive": "Create Receive",
+    "ChooseVendor": "Choose Vendor",
+    "ChooseWarehouse": "Choose Warehouse",
+    "Done": "Done",
+    "Receive": "Receive",
+    "ChooseItemLabel": "Choose Item to Receive",
+    "Warning": "Nothing To Show! Please Choose or Change A Vendor to Get a List of Products",
+    "OneMoreStep": "One More Step",
+    "TotalAmount": "Total Amount",
+    "DueAmount": "Due Amount",
+    "OK": "OK",
+    "PleaseFillQty": "Please Fill All The Quantities",
+    "ReceiveSuccess": "Items Received Successfully!",
+    "ReceiveFail": "Receiving Items Failed! Try Again"
 }

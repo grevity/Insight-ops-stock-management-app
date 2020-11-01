@@ -5,6 +5,7 @@ import 'package:stock_management/repository/api/handlers.dart';
 import 'package:stock_management/repository/data/models/vendors.dart';
 import 'package:stock_management/repository/vmodel/store.dart';
 import 'package:stock_management/screens/widgets/shimmerList.dart';
+import 'package:stock_management/utils/i18n.dart';
 
 class VendorList extends StatefulWidget {
   @override
@@ -41,7 +42,7 @@ class _VendorListState extends State<VendorList> {
             width: MediaQuery.of(context).size.width,
             child: TextField(
               decoration: InputDecoration(
-                hintText: "Search Vendors",
+                hintText: I18n.of(context).translate('SearchVendors'),
                 prefixIcon: Icon(
                   Icons.search,
                   color: Color(0xFF1abc9c),

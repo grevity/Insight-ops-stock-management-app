@@ -1,5 +1,21 @@
 {
   "HomeAppBarTitle": "मुख्य पृष्ठ",
   "HomeTabBarVendor": "विक्रेता",
-  "HomeTabBarProducts" :"उत्पाद"
+  "HomeTabBarProducts" :"उत्पाद",
+  "SearchVendors": "विक्रेता खोजें",
+  "SearchItems": "उत्पाद खोजें",
+  "CreateReceive": "प्राप्त करें",
+  "ChooseVendor": "विक्रेता चुनें",
+  "ChooseWarehouse": "गोदाम चुनें",
+  "Done": "पूर्ण करें",
+  "Receive": "प्राप्त करे",
+  "ChooseItemLabel": "प्राप्त करने के लिए उत्पाद चुनें",
+  "Warning": "दिखाने के लिए कुछ भी नहीं! कृपया उत्पादों की सूची प्राप्त करने के लिए एक विक्रेता चुनें या बदलें",
+  "OneMoreStep": "एक और क़दम",
+  "TotalAmount": "कुल रकम",
+  "DueAmount": "देय राशि",
+  "OK": "ठीक है",
+  "PleaseFillQty": "कृपया सभी मात्राएँ भरें",
+  "ReceiveSuccess": "उत्पाद सफलतापूर्वक प्राप्त हुए",
+  "ReceiveFail": "प्राप्त उत्पाद विफल रहे! पुनः प्रयास करें"
 }
