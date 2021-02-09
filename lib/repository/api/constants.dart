@@ -1,6 +1,6 @@
 
 class Constants {
-  static String get baseURL => "http://162.241.120.139:4000/api";
+  static String get baseURL => "http://<ip_address>:<port>/api";
 }
 class Version1 {
   String get login => "${Constants.baseURL}/v1/restaurant/team/login";
